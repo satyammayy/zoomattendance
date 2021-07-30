@@ -1,0 +1,358 @@
+/* Copyright (c) 2021 Ease Attendance - Varun Chitturi */
+html{
+    overflow-x: hidden!important;
+    max-width: 100vw;
+    -webkit-backface-visibility: hidden;
+    background-color: white;
+    visibility: hidden;
+}
+.fadeBody{
+    animation-name: fade;
+    --animate-delay: 1s;
+    animation-duration: 2s;
+}
+body {
+    overflow-x: hidden;
+    display: none;
+    opacity: 1;
+}
+#main-fluid{
+    margin-top: 10px;
+    width: 100vw;
+    overflow-x: hidden;
+    -webkit-backface-visibility: hidden
+}
+
+#main-banner{
+
+    padding: 60px;
+}
+.title-text{
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 120px;
+}
+.features-style{
+    background-color: #ffffff;
+    text-shadow: 2px 2px 5px #fff, 0 0 0 #b0b0b0;
+    color: transparent;
+}
+.of-style{
+    background-color: #ffffff;
+    text-shadow: 2px 2px 5px #fff, 0 0 0 #b0b0b0;
+    color: transparent;
+}
+.name-style{
+    color: #ee6165;
+    text-shadow: 4px 4px 3px #cfcaca;
+}
+.title-description{
+    color: #4f4f4f;
+}
+.banner-img{
+    width: 650px;
+    height: auto;
+    margin-left: 20%;
+}
+.description-img{
+    width: 800px;
+    overflow-x: hidden!important;
+    z-index: 100;
+
+}
+.attendance-img{
+    overflow-x: hidden!important;
+}
+.row{
+    padding: 0;
+}
+
+.container{
+    overflow-x: hidden;
+
+    -webkit-backface-visibility: hidden
+}
+.container-fluid{
+
+    padding: 0;
+    -webkit-backface-visibility: hidden
+}
+#sign-up-img{
+    margin-top: 50px;
+    width: 1000px;
+    overflow: hidden;
+}
+.caption, .caption-title{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.caption-title{
+    color: #ee6165;
+}
+#take-attendance-title{
+    margin-top: 60px;
+}
+#meetings-started{
+    margin-top: 60px;
+    width: 900px;
+    margin-left: -100px;
+}
+#paragraph-1-text{
+    line-height: 30px;
+}
+#paragraph-title-1{
+    margin-top: 100px;
+}
+.feature-icon{
+    box-shadow: 2px 4px 4px 2px #d4575a;
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    padding: 10px;
+    border: 3px dashed #ecb141;
+}
+.feature-icon-row{
+
+    margin-top: 60px;
+    padding: 100px 50px;
+    background-color: #ee6165;
+}
+.feature-title{
+    color: #ecb141;
+}
+.feature-description{
+    color: white;
+}
+.ui-row{
+    margin-top: 60px;
+}
+#ui-title{
+    margin-left: 0;
+}
+#start-title{
+    margin-top: 80px!important;
+    margin-bottom: 40px;
+}
+.sign-up-text:hover{
+    background-color: #ee6165;
+    color: white;
+}
+.sign-up-text{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100px;
+    color: #000000;
+    background-color: white;
+    border: 1px solid #ee6165;
+    padding-right: 23px !important;
+    padding-left: 23px !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(177, 177, 177, 0.25) !important;
+}
+.zoom-button{
+
+    width: 133px;
+    margin: auto;
+    background-color: white;
+    border: 1px solid #2a6ee2;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(177, 177, 177, 0.25) !important;
+}
+.zoom-button:hover{
+    background-color: #2a6ee2;
+    color: white;
+}
+.start-row{
+    padding-bottom: 50px;
+}
+#title-black{
+    color: black;
+    margin-bottom: 50px;
+}
+
+.copyright-row{
+    padding: 30px;
+    margin: 0px;
+}
+.feature-icon{
+    margin-bottom: 50px;
+    font-size: 60px;
+}
+#ui-caption{
+    margin-left: 0;
+}
+#gear-animation{
+    margin-top: -300px;
+}
+#gear-animation-lottie{
+    width: 100%;
+    height: 100%;
+}
+.attendance-img{
+    box-shadow: 2px 4px 6px 2px #e5e5e5;
+    border-radius: 5px;
+}
+.hidden{
+    visibility: hidden;
+}
+#security-container{
+    margin-top: 50px;
+
+}
+.security-image{
+    width: 90%;
+}
+.security-title{
+    color: #ee6165;
+}
+.security-col{
+    margin-top: 50px;
+}
+@media (max-width: 1650px) {
+    .banner-img {
+        width: 650px;
+    }
+
+    .description-img {
+        width: 600px;
+    }
+    #meetings-started{
+        margin-top: 100px;
+        width: 700px;
+    }
+    #sign-up-img{
+        width: 800px;
+    }
+    #ui-img{
+        width: 1300px;
+    }
+    #take-attendance-title{
+        margin-top: -50px!important;
+
+    }
+    #take-attendance-caption{
+        margin-bottom: 100px;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1250px) {
+    .banner-img {
+        width: 500px;
+        margin-top: 80px;
+        margin-left: 100px;
+
+    }
+
+    .description-img {
+        width: 450px;
+    }
+    #meetings-started{
+        margin-top: 100px;
+        width: 600px;
+    }
+    #sign-up-img{
+
+        width: 650px;
+    }
+    #ui-img{
+        width: 1150px;
+    }
+    #take-attendance-title{
+        margin-top: 100px!important;
+    }
+    #gear-animation{
+        margin-top: -200px;
+
+        width: 500px;
+    }
+}
+@media (max-width: 991px) {
+    #take-attendance-title{
+        margin-top: 100px!important;
+    }
+    #gear-animation{
+        margin-top: -100px;
+        margin-bottom: -100px;
+        width: 90%;
+        margin-left: 5%;
+    }
+    #paragraph-title-1, #paragraph-1-text{
+        margin-left: 0;
+    }
+    #ui-caption{
+        margin-left: 0;
+    }
+    .banner-img, .banner-img-col {
+        width: 0;
+        height: 0;
+        margin-top: 0;
+        margin-left: 0;
+
+    }
+    .banner-img-col{
+        margin-bottom: 100px;
+    }
+
+    .quick-start-text{
+        margin-top: 20%;
+    }
+    .description-img {
+        width: 450px;
+    }
+    #meetings-started{
+        margin-top: 70px;
+        margin-left: 0;
+        width: 80%;
+    }
+    #sign-up-img{
+        margin-left: 7%;
+        margin-right: 0;
+        width: 90%;
+    }
+    #ui-img{
+        width: 100%;
+    }
+    .quick-start-text{
+        padding: 30px;
+    }
+    .feature-col{
+        margin-top: 50px;
+
+    }
+    .feature-icon-row{
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .title-text{
+        font-size: 30px;
+    }
+}

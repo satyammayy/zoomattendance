@@ -1,0 +1,120 @@
+/* Copyright (c) 2021 Ease Attendance - Varun Chitturi */
+#main-fluid{
+    margin-top: 200px;
+}
+a{
+    color: black;
+}
+textarea {
+    height: 100px!important;
+    resize: none;
+}
+.fluid-row{
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+.container{
+    padding-left: 0 !important;
+}
+.main-row{
+    width: 850px;
+    height: 600px;
+    box-shadow: 2px 3px 6px 2px #e3e3e3;
+    border-radius: 20px;
+    padding-right: 0;
+}
+.message-input{
+    margin-top: 50px;
+}
+.second-col{
+    background-image: url("Images/mountain-back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    padding-left: 80px;
+    padding-top: 80px;
+    color: #000000;
+    min-width: 400px !important;
+}
+.secondary{
+    color: grey;
+}
+.contact{
+    margin-bottom: 55px;
+}
+.col input, .col textarea{
+    width: 300px;
+}
+.submit-message{
+    margin-top: 40px;
+    width: 100px;
+    height: 45px;
+    background-color: white;
+    border: 1px solid #ee6165;
+    padding-bottom: 25px!important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    border-radius: 50px;
+    box-shadow: 0 4px 4px rgba(177, 177, 177, 0.25) !important;
+}
+.submit-message:hover{
+    background-color: #ee6165;
+    color: white;
+}
+.message-title{
+    margin-top: 40px;
+}
+.first-col{
+    min-width: 410px !important;
+    padding-left: 30px;
+}
+.notify{
+    z-index: 1000;
+    position:fixed;
+    top:90px;
+    width:100%;
+    height:0;
+    box-sizing:border-box;
+    color:white;
+    text-align: center;;
+    background: rgb(198, 198, 198);
+    overflow:hidden;
+    box-sizing:border-box;
+    transition:height .2s;
+}
+#notifyType{
+    font-size: 18px;
+}
+#notifyType:before{
+    display:block;
+    margin-top:15px;
+}
+
+.notify-active-red{
+    padding-top:10px !important;
+
+    height:50px !important;
+    background: rgb(226, 89, 89);
+}
+.notify-active-green{
+    padding-top:10px !important;
+
+    height:50px !important;
+    background: rgb(64, 207, 116);
+}
+@media (max-width: 991px) {
+    .second-col{
+
+        padding-top: 50px;
+
+    }
+    .main-row{
+        width: 500px;
+        height: 1100px;
+
+    }
+    .first-col{
+        margin-top: 30px;
+        padding-left: 80px;
+    }
+}

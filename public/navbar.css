@@ -1,0 +1,87 @@
+/* Copyright (c) 2021 Ease Attendance - Varun Chitturi */
+.logo{
+    width: 300px;
+}
+.nav-link{
+    color: #161616;
+    font-family: "Roboto", sans-serif;
+}
+.middle:hover{
+    color: #989898;
+
+}
+.nav-right{
+    margin-left: 30px;
+}
+.sign-up:hover{
+    background-color: #ee6165;
+    color: white;
+}
+.sign-up{
+    color: #000000;
+    background-color: white;
+    border: 1px solid #ee6165;
+    padding-right: 19px !important;
+    padding-left: 19px !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(177, 177, 177, 0.25) !important;
+    max-width: 100px;
+    margin: auto;
+}
+#login-link{
+    color: black;
+}
+#login-link:hover{
+    color: #989898;
+}
+.navbar{
+    background-color: white;
+}
+
+.icon-bar{
+    width: 22px;
+    height: 2px;
+    background-color: #000000;
+    display: block;
+    transition: all 0.2s;
+    margin-top: 4px;
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+    background-color: #ee6165;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    background-color: #ee6165;
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+    background-color: #ee6165;
+}
+
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+    background-color: black;
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    background-color: black;
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+    background-color: black;
+}
+@media (max-width: 1147px){
+    .nav-right{
+        margin-left: 5px;
+    }
+}

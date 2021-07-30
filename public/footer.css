@@ -1,0 +1,22 @@
+/* Copyright (c) 2021 Ease Attendance - Varun Chitturi */
+.footer-container{
+    background-color: #ee6165;
+    color: white;
+    margin-top: 200px
+}
+.footer-link{
+    color: white;
+    width: 300px!important;
+    margin: 2px;
+}
+.footer-link:hover{
+    color: #e0e0e0;
+}
+.footer-link-row{
+    padding: 30px;
+}
+
+.copyright-row{
+    padding: 30px;
+    background-color: #b5484b;
+}

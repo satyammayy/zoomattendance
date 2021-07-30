@@ -1,0 +1,711 @@
+/* Copyright (c) 2021 Ease Attendance - Varun Chitturi */
+body {
+    font-size: .875rem;
+    -webkit-appearance: none !important;
+}
+*:hover, *:focus, *:active {box-shadow: none !important; }
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+hr{
+    border: 0;
+    border-top: 1px solid rgb(253, 253, 253);
+}
+#help-button{
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 1000;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 6px 1px #cdcdcd;
+}
+#help-button:hover{
+    background-color: #ee6165;
+    box-shadow: 0 2px 6px 1px #cdcdcd!important;
+}
+
+#documentation-link, #documentation-link:active{
+    color: #ee6165;
+
+}
+#documentation-link:hover, #documentation-link:focus{
+    color: white;
+}
+
+.container-fluid.full-width{
+    padding-left: 0;
+    padding-right: 0;
+
+}
+.sidebar-heading{
+    font-weight: bold;
+
+    color: #ffffff !important;
+}
+.sidebar-sticky {
+
+    top: 0;
+    height: calc(100vh);
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #ffffff !important;
+}
+
+.sidebar .nav-link.active {
+    color: #ffffff !important;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: #F5B364;
+}
+.nav-link:hover{
+    color: #F5B364 !important;
+}
+.nav-link{
+    color: #ffffff !important;
+    background-color: #ee6165!important;
+    border: 0 solid white !important;
+
+}
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+.dropdown-item{
+    cursor: pointer;
+    color: black;!important;
+}
+.dropdown-item.roster-active{
+    background-color: #F5B364;
+    color: white!important;
+}
+.dropdown-item.roster-active:hover{
+    background-color: #F5B364!important;
+    color: white!important;
+}
+
+.container .dropdown .dropdown-menu a:hover
+{
+    background-color: #ffffff;
+    color: #F5B364;
+}
+.container .dropdown .dropdown-menu a:focus
+{
+    background-color: #ffffff;
+    color: #F5B364;
+}
+.container .dropdown .dropdown-menu a:active
+{
+    background-color: #ffffff;
+    color: #F5B364;
+}
+
+.dropdown-menu{
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 200px;
+    max-width: 700px;
+    max-height: 400px;
+    z-index: 998!important;
+}
+
+/*
+ * Content
+ */
+
+[role="main"] {
+    padding-top: 48px; /* Space for fixed navbar */
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(239, 239, 239, 0.25);
+}
+#dashboard-sidebar{
+    position: fixed;
+    bottom: 0;
+    top:0;
+    z-index: 1000;
+    max-width: 300px;
+    background-color: #ee6165;
+    padding: 15px !important;
+    border-radius: 0 20px 20px 0 !important;
+    margin-left: 15px;
+    min-width: 250px;
+}
+#user-name{
+    color: white;
+}
+.active{
+    color: #F5B364 !important;
+    font-weight: bold!important;
+}
+
+.tab-content{
+    padding: 50px;
+}
+#participant-table-head{
+    background-color: #ee6165 !important;
+
+}
+.table-head-title{
+    color: white;
+}
+.badge{
+    font-size: 14px;
+}
+.badge-success{
+    background-color: #45d66d;
+    padding: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 10px;
+}
+.badge-warning{
+    background-color: #ffc46c;
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+.badge-danger{
+    background-color: #e2301a;
+    padding: 5px;
+    padding-right: 11px;
+    padding-left: 11px;
+    border-radius: 10px;
+}
+#logout-button{
+    color: white;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: -2px;
+}
+
+#logout-button:hover{
+    color: #F5B364 !important;
+
+}
+#currentMeeting-name{
+    color: black;
+    margin-bottom: 10px;
+}
+#status{
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.dots {
+    margin: 40px auto;
+}
+
+.dot {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #EEE;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+}
+.dot.dot-success {
+    background-color: #54cb84;
+}
+.dot.dot-warning {
+    background-color: #f0ad4e;
+}
+.dot.dot-danger {
+    background-color: #e23b39;
+}
+.dot.dot-sm {
+    height: 10px;
+    width: 10px;
+}
+.dot.dot-lg {
+    margin: 0 4px;
+    height: 20px;
+    width: 20px;
+}
+.sort-buttons{
+    cursor : pointer;
+}
+#time-last-left-info{
+    margin-left: 5px;
+}
+#time-last-left-info:focus{
+    outline: none!important;
+}
+#time-last-left-info:hover{
+    cursor: pointer;
+    outline: none!important;
+    color: #F5B364 !important;
+
+}
+#popover-info{
+    outline: none;
+}
+#firstNameBtn:hover{
+    color: #F5B364 !important;
+}
+#lastNameBtn:hover{
+    color: #F5B364 !important;
+}
+#timeJoinedBtn:hover{
+    color: #F5B364 !important;
+}
+#timeLeftBtn:hover{
+    color: #F5B364 !important;
+}
+.filter-button{
+    -webkit-appearance: none!important;
+    margin-bottom: 10px;
+    background: none !important;
+    border: none !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#filter-button{
+    color: #acacac;
+}
+#filter-drop-menu{
+    color: black!important;
+}
+
+#filter-button:hover{
+    color: #F5B364;
+}
+.filter-button:hover{
+    color: #F5B364 !important;
+    background: none;
+}
+.filter-active{
+    background-color: #F5B364 !important;
+    color: white!important;
+    border-radius: 0!important;
+}
+.filter-active:hover{
+    color: white!important;
+}
+#person-search{
+    width: 225px;
+    margin-top: -5px;
+}
+.input-group-text{
+    background-color: #ffffff !important;
+
+}
+#tab-col{
+    margin-left: 300px;
+}
+#myTabContent{
+    min-width: 860px;
+}
+.tab-title{
+    color: black;
+}
+#meeting-title{
+    margin-bottom: 50px;
+}
+#meeting-table{
+    margin-top: 500px !important;
+    color: black;
+}
+#add-meeting-button{
+    background: none;
+    outline: none;
+    border-color: #F5B364;
+}
+#add-meeting-button:hover{
+    background: #F5B364;
+    color: white;
+    outline: none;
+    border-color: #F5B364;
+}
+
+#dropdown-roster{
+    color: black;
+    margin-left: 0!important;
+    margin-bottom: 20px;
+}
+#add-on-registered-update, #add-on-registered-create,#dropdown-roster, #add-on-registered-create{
+    margin-top: -5px;
+    margin-left: 20px;
+    background: none;
+    outline: none;
+    border-color: #F5B364;
+}
+#add-on-registered-update:hover, #add-on-registered-create:hover,#dropdown-roster:hover,#add-on-registered-create:hover {
+    background: #F5B364;
+    color: white;
+    outline: none;
+    border-color: #F5B364;
+}
+.new-roster-drop{
+    -webkit-appearance: none;
+}
+.meeting-table-title{
+    background-color: #ee6165 !important;
+
+}
+.meeting-id-text{
+    color: #a7a7a7;
+}
+.modal-dialog{
+    color: black;
+    min-width: 800px!important;
+}
+.student-name{
+    width:200px;
+
+}
+.student-first-name{
+    margin-right: 25px;
+    margin-left: 15px;
+}
+.trash-btn{
+    margin-top: -20px;
+    height:30px;
+    padding: 0;
+    border: 1px solid #FF7373;
+    color: #FF7373;
+    margin-left: 40px;
+}
+.trash-btn:hover{
+    background-color: #FF7373;
+    color: white;
+}
+#meeting-id, #meeting-name{
+    margin-left: 15px!important;
+
+}
+#meeting-id{
+    width: 230px;
+    margin-bottom: 10px;
+}
+#meeting-name{
+    width: 400px;
+    margin-bottom: 20px;
+}
+.modal-input{
+    margin-bottom: 20px;
+}
+.modal-title{
+    margin-bottom: 20px;
+}
+#add-student-button{
+    width:130px;
+    right: 0;
+    border-color: #F5B364;
+    margin-right: 307px;
+}
+#add-student-button:hover{
+    background: #F5B364;
+    color: white;
+    outline: none;
+    border-color: #F5B364;
+
+}
+#delete-record-warning-modal{
+    margin-top: 20%;
+}
+#close-meetings-modal, #close-records-modal, #close-settings-modal,.close-modal{
+    color: #ababab !important;
+}
+#close-meetings-modal:hover, #close-records-modal:hover, #close-settings-modal:hover,.close-modal:hover{
+    color: #ff3131 !important;
+}
+#save-meeting-button{
+    background: none;
+    outline: none;
+    border-color: #6483f5;
+    color: black;
+}
+#save-meeting-button:hover{
+     background: #6483f5;
+     color: white;
+     outline: none;
+     border-color: #6483f5;
+ }
+.input-error{
+    border-color: red;
+}
+.meeting-row:hover{
+    cursor: pointer!important;
+    margin-top: -5px!important;
+    margin-bottom: 5px!important;
+    box-shadow: 1px 3px 4px 1px #c3c3c3!important;
+}
+#delete-meeting-button{
+    background: none;
+    outline: none;
+    border-color: #ec3232;
+    color: black;
+}#delete-meeting-button:hover{
+     background: #ec3232;
+     color: white;
+     outline: none;
+     border-color: #ec3232;
+ }
+.notify{
+    z-index: 20000;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:0;
+    box-sizing:border-box;
+    color:white;
+    text-align: center;;
+    background: rgb(198, 198, 198);
+    overflow:hidden;
+    box-sizing:border-box;
+    transition:height .2s;
+}
+#notifyType{
+    font-size: 18px;
+}
+#notifyType:before{
+    display:block;
+    margin-top:15px;
+}
+
+.notify-active-red{
+    padding-top:10px !important;
+
+    height:50px !important;
+    background: rgb(226, 89, 89);
+}
+.notify-active-green{
+    padding-top:10px !important;
+    height:50px !important;
+    background: rgb(64, 207, 116);
+}
+.notify-active-yellow{
+    padding-top:10px !important;
+
+    height:50px !important;
+    background: rgb(236, 183, 31);
+}
+.failure:before{
+    Content:"Please check make sure that you filled out all the fields";
+}
+.failureID:before{
+    Content:"Please enter a valid Zoom meeting ID";
+}
+.failureIDDup:before{
+    Content:"You have already added a meeting with this ID";
+}
+.failureServer:before{
+    Content:"Sorry, we had some trouble connecting to the server";
+}
+#meeting-id-attendance{
+    color: #bababa;
+}
+#past-meeting-title{
+    color: black;
+}
+#records-search{
+    margin-top: 40px;
+    width: 225px;
+    margin-bottom: 15px;
+}
+#records-table-head{
+    background-color: #ee6165 !important;
+}
+#current-record-name, #current-record-date,#current-record-id{
+    margin-bottom: 15px;
+}
+#refresh{
+    margin-top: -5px;
+    margin-right: -7px;
+    color: #acacac !important;
+}
+#refresh:hover{
+    color: #F5B364 !important;
+}
+#refresh:disabled{
+    cursor: default;
+}
+#export-meeting{
+    margin-top: -5px;
+    color: #acacac !important;
+}
+#export-meeting:hover{
+    color: #F5B364 !important;
+}
+#export-meeting:disabled{
+    cursor: default;
+}
+.ld-ring{
+    color: #ee6165!important;
+    font-size: 20px;
+}
+.record-row:hover{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    cursor: pointer!important;
+    box-shadow: 1px 3px 4px 1px #c3c3c3!important;
+
+
+}
+
+#export-record-button{
+    background: none;
+    outline: none;
+    border-color: #6483f5;
+    color: black;
+}#export-record-button:hover{
+     background: #6483f5;
+     color: white;
+     outline: none;
+     border-color: #6483f5;
+ }
+#delete-record-button{
+    background: none;
+    outline: none;
+    border-color: #ec3232;
+    color: black;
+}#delete-record-button:hover{
+     background: #ec3232;
+     color: white;
+     outline: none;
+     border-color: #ec3232;
+ }
+.destructive-btn{
+    background: none;
+    outline: none;
+    border-color: #ec3232;
+    color: black;
+}
+.destructive-btn:hover{
+     background: #ec3232;
+     color: white;
+     outline: none;
+     border-color: #ec3232;
+ }
+#displayName, #old-email, #current-password, #email, #pass-current-email{
+    margin-bottom: 15px;
+    width: 300px;
+}
+.save-setting-button{
+    background-color: white;
+    border-color: #54cb84;
+    margin-bottom: 20px;
+    color: #54cb84;
+}
+.save-setting-button:hover{
+    background: #54cb84;
+    color: white;
+    outline: none;
+    border-color: #54cb84;
+}
+.save-setting-button:active{
+    box-shadow: inset 0 0 10px #54cb84;
+}
+#logout-button{
+    cursor: pointer;
+}
+#verifyEmail{
+    margin-top: 300px;
+}
+#verifyEmailTitle{
+    margin-bottom: 15px;
+}
+#verifyEmailDescription{
+    color: #a9a9a9;
+    margin-bottom: 15px;
+}
+#settings-link{
+    -webkit-appearance: none;
+    outline: none;
+    border: none
+}
+#settings-link:focus{
+    -webkit-appearance: none;
+    outline: none;
+    border: none
+}
+#current-participants{
+    color: black;
+    display: inline!important;
+}
+#current-participant-number{
+    color: #ebac62;
+    display: inline!important;
+}
+@media (max-width: 1500px) {
+    #dashboard-sidebar{
+        min-width: 100px;
+        max-width: 100px;
+        padding: 15px !important;
+        border-radius: 0 20px 20px 0 !important;
+        margin-left: 15px;
+    }
+    #user-name{
+        display: none;
+    }
+    #tab-col{
+        margin-left: 100px;
+    }
+    .sidebar-text{
+        display: none;
+    }
+    .sidebar-icon{
+        font-size: 23px!important;
+    }
+    .nav-link{
+        text-align: center!important;
+
+    }
+
+    .sidebar-title{
+        display: none;
+    }
+    .space{
+        display: none;
+    }
+}

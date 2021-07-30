@@ -1,0 +1,82 @@
+/* Copyright (c) 2021 Ease Attendance - Varun Chitturi */
+
+.landing-page-container{
+  margin-top: 150px;
+  height: 65vh;
+  min-height: 400px;
+}
+.landing-page-text{
+  margin-top: 200px;
+  min-width: 400px !important;
+}
+.landing-page-image{
+  min-width: 500px !important;
+}
+.secondary-text{
+  color: grey;
+  margin-bottom: 35px;
+  margin-top: 20px;
+}
+.sign-up-text{
+  margin-left: 10px;
+  margin-top: 15px;
+  width: 100px;
+
+  background-color: white;
+  border: 1px solid #ee6165;
+  padding-right: 10px !important;
+  padding-left: 23px !important;
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(177, 177, 177, 0.25) !important;
+}
+.sign-up-text:hover{
+  background-color: #ee6165;
+  color: white;
+}
+.zoom-button{
+  margin-left: 10px;
+  margin-top: 15px;
+  width: 133px;
+
+  background-color: white;
+  border: 1px solid #2a6ee2;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(177, 177, 177, 0.25) !important;
+}
+.zoom-button:hover{
+  background-color: #2a6ee2;
+  color: white;
+}
+.learn-more-page-link{
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 120px;
+
+  background-color: white;
+  border: 1px solid #ee6165;
+  padding-right: 10px !important;
+  padding-left: 20px !important;
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(177, 177, 177, 0.25) !important;
+}
+.learn-more-page-link:hover{
+  background-color: #ee6165;
+  color: white;
+}
+
+@media (max-width: 991px){
+  .landing-page-text{
+    margin-top: -10px;
+    margin-bottom: 100px;
+    min-width: 400px !important;
+  }
+
+}
+
+@media (max-width: 1199px) and (min-width: 992px){
+  #landing-page-animation{
+    margin-top: 50px;
+  }
+}

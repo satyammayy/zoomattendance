@@ -1,0 +1,385 @@
+<!--  Copyright (c) 2021 Ease Attendance - Varun Chitturi  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Ease Attendance | Dashboard" />
+    <meta property="og:description" content="The Ease Attendance dashboard - take attendance" />
+    <meta property="og:url" content="https://easeattendance.com/dashboard" />
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/easeattendance-c68ed.appspot.com/o/Ease%20Attendance%20Meeting.png?alt=media&token=5ccc93bd-a156-4d04-b3a4-1bc53d4481ac" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.6"/>
+    <meta name="robots" content="index, follow">
+    <title>Ease Attendance | Dashboard</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="vendor/jquery.input-allow.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="modules/all.min.css">
+    <link rel="stylesheet" type="text/css" href="modules/font-awesome.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/ldbtn.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/loading.min.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
+</head>
+<div class="notify"><span id="notifyType"></span></div>
+<body>
+<a title="View documentation" href="/documentation" target="_blank" id="documentation-link"><div id="help-button"><span class="iconify" data-inline="false" data-icon="ion:help" style="font-size: 25px;"></span>
+</div></a>
+<div class="container-fluid row full-width">
+
+    <div class="sidebar-sticky col" id="dashboard-sidebar">
+        <h4 id="user-name"></h4>
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span class="sidebar-title">Menu</span>
+        </h6>
+        <hr>
+        <ul class="nav flex-column nav-tabs" id="dashboard-tabs" role = "tablist">
+            <li class="nav-item">
+                <a class="nav-link active tab-link" id="attendance-tab" href="#attendance" data-toggle="tab" role="tab" aria-controls="attendance" aria-selected="true">
+                    <span class="iconify sidebar-icon" data-inline="false" data-icon="bi:card-checklist" style="font-size: 18px;"></span>
+                    <span class="space">&nbsp;&nbsp;</span><span class="sidebar-text">Attendance</span> <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link tab-link" id="meetings-tab" href="#meetings" data-toggle="tab" role="tab" aria-controls="meetings" aria-selected="false">
+                    <span class="iconify sidebar-icon" data-inline="false" data-icon="bi:people" style="font-size: 18px;"></span>
+                    <span class="space">&nbsp;&nbsp;</span><span class="sidebar-text">My Rosters</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link tab-link" id="records-tab" href="#records" data-toggle="tab" role="tab" aria-controls="students" aria-selected="false">
+                    <span class="iconify sidebar-icon" data-inline="false" data-icon="ic:outline-access-time" style="font-size: 18px;"></span>
+                    <span class="space">&nbsp;&nbsp;</span><span class="sidebar-text">Meeting Records</span>
+                </a>
+            </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span class="sidebar-title">Account</span>
+        </h6>
+        <hr>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+                <a onclick="resetSettingInput()" id="settings-link" class="nav-link" data-toggle="modal" data-target="#settings-modal" href="#">
+                    <span class="iconify sidebar-icon" data-inline="false" data-icon="ant-design:setting-outlined" style="font-size: 18px;"></span>
+                    <span class="sidebar-text">Settings</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-link" href="#">
+                    <a onclick="logout()" id="logout-button">
+                         <span class="iconify sidebar-icon" data-inline="false" data-icon="bx:bx-log-out" style=" font-size: 18px;"></span>
+                        <span class="sidebar-text">Sign Out</span></a>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div id="tab-col" class="col">
+
+        <div hidden class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade show active container col" id="attendance" role="tabpanel" aria-labelledby="home-tab">
+                <h1 id="currentMeeting-name">No Meeting Has Started</h1>
+                <h5 id="meeting-id-attendance">ID:</h5>
+                <h5 id="current-participants"> <h5 id="current-participant-number"></h5></h5>
+                <h5 id="status">Status:
+                    <span id="status-dot" class='dot dot-danger'></span>
+                </h5>
+                <div  class="dropdown show">
+                    <button class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdown-roster" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Choose Roster
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-roster-menu" aria-labelledby="dropdown-roster">
+                    </div>
+                </div>
+                <div id="person-search" class="input-group flex-nowrap float-left">
+                    <div id="search-prepend" class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping"><span class="iconify" data-inline="false" data-icon="ant-design:search-outlined" style="font-size: 20px;"></span></span>
+                    </div>
+                    <input id="student-search-input-field" onclick="this.select()" type="text" class="form-control student-search-input" placeholder="Participant Name" aria-label="Student Name" aria-describedby="addon-wrapping">
+                </div>
+                <div  class="dropdown show">
+                    <button class="float-left btn dropdown-toggle" href="#" role="button" id="add-on-registered-create" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Create New Roster
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-create-roster-with-all-participants" aria-labelledby="dropdown-roster">
+                        <a  class="dropdown-item btn new-roster-drop" data-toggle="modal" data-target="#add-edit-meeting-modal" type="button" onclick="addNotRegisteredCreateAll()">With All Participants</a>
+                        <a  class="dropdown-item btn new-roster-drop" data-toggle="modal" data-target="#add-edit-meeting-modal" type="button" onclick="addNotRegisteredCreateOnlyNotRegistered()">With Unregistered Participants</a>
+                    </div>
+                </div>
+                <button onclick="addNotRegisteredUpdate()" class="float-left btn" data-toggle="modal" data-target="#add-edit-meeting-modal" type="button" id="add-on-registered-update">Update Current Roster</button>
+                <div id="export-button" class="btn-group float-right" role="group" aria-label="Export Button">
+                    <a title="Export meeting" id="export-meeting" onclick="exportMeeting()" type="button" class="btn btn-secondary filter-button"><span class="iconify export-icon" data-icon="mdi:export-variant" data-inline="false" style="font-size: 28px;"></span></a>
+                </div>
+                <div id="filter-group" class="btn-group float-right" role="group" aria-label="Choose Filter">
+                    <div id="filter-dropdown-group" class="dropdown">
+                        <a role="button" id="filter-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10" title="Filters">
+                            <span id="filter-caret" class="iconify" data-icon="ion-caret-down" data-inline="false" style="margin-right: -3px"></span>
+                            <span id="filter-button-icon" class="iconify" style="font-size: 30px" data-icon="bx:bx-filter-alt" data-inline="false"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" id="filter-drop-menu">
+                            <a id="all-filter" onclick="filterClick(this.id)" type="button" class="btn btn-secondary filter-button filter-active dropdown-item">All</a>
+                            <a id="present-filter" onclick="filterClick(this.id)" type="button" class="btn btn-secondary filter-button dropdown-item">Present</a>
+                            <a id="absent-filter" onclick="filterClick(this.id)" type="button" class="btn btn-secondary filter-button dropdown-item">Absent</a>
+                            <a id="left-meeting-filter" onclick="filterClick(this.id)" type="button" class="btn btn-secondary filter-button dropdown-item">Left Meeting</a>
+                            <a id="not-registered-filter" onclick="filterClick(this.id)" type="button" class="btn btn-secondary filter-button dropdown-item">Not Registered</a>
+                        </div>
+                    </div>
+                    <div id="refresh-cover" class="ld ld-over-full">
+                        <a title="Refresh table" id="refresh" onclick="refreshTable()" type="button" class="btn btn-secondary filter-button"><span class="iconify restart-icon" data-inline="false" data-icon="ic:round-restart-alt" style="font-size: 30px;"></span></a>
+                        <div id="ld-spin" class="ld ld-ring ld-spin"></div>
+                    </div>
+
+                </div>
+                <table class="table" id="participant-table">
+                    <thead id="participant-table-head">
+                    <tr>
+                        <th class="table-head-title"  scope="col">
+                            <a id = "firstNameBtn" onclick="sortByFirst()" class = "sort-buttons" style="color : #F5B364">First Name</a>
+                        </th>
+
+                        <th class="table-head-title"  scope="col">
+                            <a id = "lastNameBtn" onclick="sortByLast()" class = "sort-buttons" style="color: white">Last Name</a>
+                        </th>
+
+                        <th class="table-head-title"  scope="col">
+                            <a id = "timeJoinedBtn" onclick="sortByTimeJoined()" class = "sort-buttons" style="color: white">Time First Joined</a>
+                        </th>
+
+                        <th class="table-head-title"  scope="col">
+                            <a id = "timeLeftBtn" onclick="sortByTimeLeft()" class = "sort-buttons" style="color: white">Time Last Left </a>
+                            <a id="popover-info" tabindex="0" data-trigger="hover" data-container="body" data-toggle="popover" data-placement="top" data-content="When a participant transitions to or from a breakout room, they actually leave and rejoin the meeting"><span id="time-last-left-info" class="iconify" data-icon="akar-icons:info" ></span></a>
+                        </th>
+
+                        <th class="table-head-title" scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade container col justify-content-center" id="meetings" role="tabpanel" aria-labelledby="profile-tab">
+                <h1 id="meeting-title" class="tab-title float-left">My Rosters</h1>
+                <table class="table" id="my-meetings-table">
+                    <thead>
+                    <tr>
+                        <th class="table-head-title meeting-table-title" scope="col">Roster Name</th>
+                        <th class="table-head-title meeting-table-title" scope="col" >Meeting ID</th>
+                    </tr>
+                    </thead>
+                    <tbody id="meeting-table">
+                    </tbody>
+                </table>
+                <button onclick="addMeetingModal()" class="float-right btn" data-toggle="modal" data-target="#add-edit-meeting-modal" type="button" id="add-meeting-button">Add Roster</button>
+            </div>
+            <div class="tab-pane fade" id="records" role="tabpanel" aria-labelledby="contact-tab"><h1 id="past-meeting-title">Meeting Records</h1>
+                <div id="records-search" class="input-group flex-nowrap float-left">
+                    <div id="records-prepend" class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping-2"><span class="iconify" data-inline="false" data-icon="ant-design:search-outlined" style="font-size: 20px;"></span></span>
+                    </div>
+                    <input id="records-search-input-field" onclick="this.select()" type="text" class="form-control student-search-input" placeholder="Meeting Name" aria-label="Meeting Name" aria-describedby="addon-wrapping">
+                </div>
+                <table class="table" id="records-table">
+                    <thead id="records-table-head">
+                    <tr>
+                        <th class="table-head-title" scope="col">Meeting Name</th>
+                        <th class="table-head-title" scope="col">Meeting ID</th>
+                        <th class="table-head-title" scope="col">Time Started</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <button  id="delete-all-records-button" type="button" data-toggle="modal" data-target="#delete-record-warning-modal" class="btn destructive-btn float-right">Delete All Records</button>
+                <!--- Delete all records warning modal -->
+                <div class="modal fade" id="delete-record-warning-modal" tabindex="" role="dialog" aria-labelledby="delete-record-warning-modal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header delete-record-header">
+                                <h2 id="delete-all-records-modal-title" class="float-left">Delete All Meeting Records</h2>
+                                <button id="close-delete-all-records-modal" type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                                    <span class="iconify" data-inline="false" data-icon="cil:x" style="font-size: 35px;"></span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5 class="">Are you sure you want to delete all you meeting records</h5>
+                                <h5 class="text-secondary">This action is irreversible</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button  onclick="confirmDeleteAllRecords()" id="delete-all-records-button-confirm" type="button" class="btn destructive-btn float-right">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Meeting Record Modal -->
+                <div class="modal fade" id="meeting-record-modal" tabindex="-1" role="dialog" aria-labelledby="meeting-record-modal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button id="close-records-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span class="iconify" data-inline="false" data-icon="cil:x" style="font-size: 35px;"></span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5 id="current-record-name">Meeting Name</h5>
+                                <h5 id="current-record-date">Date: </h5>
+                                <h5 id="current-record-id">Meeting ID</h5>
+                                <div id="current-record-search" class="input-group flex-nowrap float-left">
+                                    <div id="current-record-prepend" class="input-group-prepend">
+                                        <span class="input-group-text" id="addon-wrapping-3"><span class="iconify" data-inline="false" data-icon="ant-design:search-outlined" style="font-size: 20px;"></span></span>
+                                    </div>
+                                    <input id="current-record-search-input-field" onclick="this.select()" type="text" class="form-control student-search-input" placeholder="Filter" aria-label="Filter" aria-describedby="addon-wrapping">
+                                </div>
+                                <table class="table" id="current-record-table">
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="exportMeetingRecord()" id="export-record-button" type="button" class="btn btn-primary">Export Record</button>
+                                <button onclick="deleteRecord()" id="delete-record-button" type="button" class="btn btn-primary">Delete Record</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add/Edit Meeting Modal -->
+    <div class="modal fade meeting-modal" id="add-edit-meeting-modal" tabindex="-1" role="dialog" aria-labelledby="add-edit-meeting-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="meeting-modal-title" class="float-left"></h2>
+                    <button id="close-meetings-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="iconify" data-inline="false" data-icon="cil:x" style="font-size: 35px;"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-5">
+                        <h5 class="modal-title">Roster Details</h5>
+                        <div id="meeting-name" class="input-group flex-nowrap float-left">
+                            <div id="meeting-name-prepend" class="input-group-prepend">
+                                <span class="input-group-text">Name</span>
+                            </div>
+                            <input id="meeting-name-input-field" onclick="this.select()" type="text" class="form-control modal-input" placeholder="Roster Name" aria-label="Roster Name" aria-describedby="addon-wrapping">
+                        </div>
+                        <div id="meeting-id" class="input-group flex-nowrap float-left">
+                            <div id="meeting-id-prepend" class="input-group-prepend">
+                                <span class="input-group-text">ID</span>
+                            </div>
+                            <input allow="[0-9]" id="meeting-id-input-field" onclick="this.select()" type="text" class="form-control modal-input" placeholder="Meeting ID" aria-label="Meeting ID" aria-describedby="addon-wrapping">
+                        </div>
+                        <h5>Participants</h5>
+                        <h6 class="text-secondary modal-title" id="roster-participant-count">Participant Count: 0</h6>
+                        <table id="student-input-table">
+                            <tbody id="student-input-table-body">
+                            <tr>
+                                <th scope="col"> <input type="text" placeholder="First name" class="form-control student-name modal-input student-first-name"></th>
+                                <th scope="col"> <input type="text" placeholder="Last name" class="form-control student-name modal-input"></th>
+                                <th scope="col"> <button onclick="deleteStudent(this)" class="btn trash-btn" type="button"><span class="iconify" data-inline="false" data-icon="ei:trash" style="font-size: 30px;"></span></button></th>
+
+                            </tr>
+                            <tr>
+                                <th scope="col"> <input type="text" placeholder="First name" class="form-control student-name student-first-name modal-input"></th>
+                                <th scope="col"> <input type="text" placeholder="Last name" class="form-control student-name modal-input"></th>
+                                <th scope="col"> <button onclick="deleteStudent(this)" class="btn trash-btn" type="button"><span class="iconify" data-inline="false" data-icon="ei:trash" style="font-size: 30px;"></span></button></th>
+
+                            </tr>
+                            <tr>
+                                <th scope="col"> <input type="text" placeholder="First name" class="form-control student-name student-first-name modal-input"></th>
+                                <th scope="col"> <input type="text" placeholder="Last name" class="form-control student-name modal-input"></th>
+                                <th scope="col"> <button onclick="deleteStudent(this)" class="btn trash-btn" type="button"><span class="iconify" data-inline="false" data-icon="ei:trash" style="font-size: 30px;"></span></button></th>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button onclick="addStudent()" class="float-right btn" type="button" id="add-student-button">Add Student</button>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="deleteMeeting()" id="delete-meeting-button" type="button" class="btn btn-primary">Delete Roster</button>
+                    <button onclick="addMeeting()" id="save-meeting-button" type="button" class="btn btn-primary">Finish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+    <!--Settings Modal-->
+    <div class="modal fade" id="settings-modal" tabindex="-1" role="dialog" aria-labelledby="settings-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Account Settings</h3>
+                    <button id="close-settings-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="iconify" data-inline="false" data-icon="cil:x" style="font-size: 35px;"></span>
+                    </button>
+                </div>
+                <div class="modal-body col-5">
+                    <h6>Name</h6>
+                    <div id="displayName" class="input-group flex-nowrap float-left">
+                        <div id="displayName-prepend" class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping-4"><span class="iconify" data-inline="false" data-icon="ant-design:user-outlined" style="font-size: 20px;"></span></span>
+                        </div>
+                        <input autocomplete="off" id="displayName-input-field" onclick="this.select()" type="text" class="form-control " placeholder="Enter a new name" aria-label="New Name" aria-describedby="addon-wrapping">
+                    </div>
+                    <button type="button" onclick="saveDisplayName()" class="btn save-setting-button">Save Changes</button>
+                    <h6>Password</h6>
+                    <div id="pass-current-email" class="input-group flex-nowrap float-left">
+                        <div id="pass-current-email-prepend" class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping-6"><span class="iconify" data-inline="false" data-icon="carbon:email" style="font-size: 20px;"></span></span>
+                        </div>
+                        <input autocomplete="off" id="pass-current-email-input-field" onclick="this.select()" type="email" class="form-control " placeholder="Enter email" aria-label="Old pass" aria-describedby="addon-wrapping">
+                    </div>
+                    <button type="button" onclick="resetPassword()" class="btn save-setting-button">Send Reset Link</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+<!-- Initialize Firebase -->
+
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyArNouw56zZhTG5zuwFAYuev3zlK02VMok",
+        authDomain: "easeattendance-c68ed.firebaseapp.com",
+        projectId: "easeattendance-c68ed",
+        storageBucket: "easeattendance-c68ed.appspot.com",
+        messagingSenderId: "200365032412",
+        appId: "1:200365032412:web:4935cf8c68760d25818519",
+        measurementId: "G-HW6X22SK2H"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+
+<script type="text/javascript" src="dashboard.js"></script>
+
+
+</html>
+

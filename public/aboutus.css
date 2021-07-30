@@ -1,0 +1,140 @@
+/* Copyright (c) 2021 Ease Attendance - Varun Chitturi */
+body{
+    background-image: url("Images/aboutusBackgound.png");
+    background-size: cover;
+    animation-name: background;
+    animation-duration: 0.7s;
+    animation-delay: 0s;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+a{
+    color: black;
+}
+#wrapping-container{
+    padding: 20px;
+    padding-top: 200px;
+}
+#mission-container{
+    color: #000000;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation-delay: 1s;
+    padding: 100px;
+    border-radius: 20px;
+
+}
+.row{
+    margin-right: 0 !important;
+}
+.member-col{
+    min-width: 400px;
+    margin-top: 100px;
+    padding: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    background-color: white;
+    border-radius: 20px;
+}
+.container{
+    min-width: 400px;
+}
+.member-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 2px 5px 5px 1px #dddddd;
+
+}
+.member-role{
+    color: #fa6060;
+    margin-bottom: 20px;
+}
+
+.member-info-iconify{
+    position: relative;
+    bottom:4px!important;
+}
+
+.member-phone{
+    margin-left: -15px;
+}
+.member-info{
+    margin-bottom: 30px;
+}
+#team-container{
+    animation-delay: 1.9s;
+}
+.member-email-link{
+    background-color: #ef5555;
+
+}
+.member-facebook-link{
+    background-color: #557cef;
+}
+
+.member-git-link{
+    background-color: #ffffff;
+
+}
+.member-insta-link{
+    background-color: #111111;
+}
+.member-linkedin-link{
+    background-color: #437bfc;
+}
+.member-social{
+    box-shadow: 0 2px 3px 1px #d0d0d0;
+    border: white 1px solid;
+    width: 50px;
+    height: 50px;
+    color: white!important;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+.member-social-git{
+    box-shadow: 0 2px 3px 1px #d0d0d0;
+    border: #000000 1px solid;
+    width: 50px;
+    height: 50px;
+    color: #000000 !important;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+.member-social-git:hover{
+    margin-top: -3px;
+    box-shadow: 0 5px 4px 1px #d0d0d0;
+}
+.member-social:hover{
+    margin-top: -3px;
+    box-shadow: 0 5px 4px 1px #d0d0d0;
+}
+.iconify-social{
+    position: relative;
+    bottom: 1px;
+}
+@keyframes background {
+    0%   {backdrop-filter: blur(0);
+        -webkit-backdrop-filter: blur(0);}
+    100% {backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);}
+}
+@media (max-width: 767px){
+    #mission-container{
+        padding: 50px;
+    }
+}
+@media (max-width: 991px){
+    .member-col{
+        margin-right:0;
+
+    }
+}

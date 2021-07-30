@@ -1,0 +1,113 @@
+<!--  Copyright (c) 2021 Ease Attendance - Varun Chitturi  -->
+<!DOCTYPE html>
+<html lang="en" id="doc">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Ease Attendance" />
+    <meta property="og:description" content="A Zoom app plugin that allows for a better way to take attendance on Zoom" />
+    <meta property="og:url" content="https://easeattendance.com" />
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/easeattendance-c68ed.appspot.com/o/Ease%20Attendance%20Landing%20Page.png?alt=media&token=a767f217-4125-4b00-ac4d-51ef65ce9072" />
+    <meta property="og:type" content="website" />
+    <meta name="google-site-verification" content="wQoo3KBz6LqoRVewKLq7UTli7M8KRzfFrZzRBfdMkU0" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7"/>
+    <meta name="robots" content="index, follow">
+    <title>Ease Attendance</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="modules/all.min.css">
+    <link rel="stylesheet" type="text/css" href="modules/font-awesome.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link type="text/css" rel="stylesheet" href="index.css"/>
+    <link type="text/css" rel="stylesheet" href="footer.css"/>
+    <link type="text/css" rel="stylesheet" href="navbar.css"/>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="easeattendance" data-description="Support me on Buy me a coffee!" data-message="If you enjoy using our website, please consider buying us a coffee to support our work." data-color="#FF5F5F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+</head>
+<div id="nav">
+
+</div>
+
+<body class="text-center" id="body-container">
+    <div class="container landing-page-container" id="landing-page-container">
+        <div class="row justify-content-center">
+            <div class="col landing-page-image">
+
+                <lottie-player id="landing-page-animation" src="Animations/landing-page-animation.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;" ></lottie-player>
+            </div>
+            <div class="col-4 text-left landing-page-text">
+                <h3 class="title-text">Simplify the Process</h3>
+                <h5 class="secondary-text">
+                    We know that teaching through Zoom can be tough so let us help you with your attendance.
+                </h5>
+                <div class="row">
+                    <a class="text-center nav-link zoom-button" target="_blank" href="https://zoom.us/oauth/authorize?response_type=code&client_id=jr7r46eTRvyF0CPmGFBGGA&redirect_uri=https://www.easeattendance.com/authorize">Add to Zoom</a>
+                    <a class="nav-link learn-more-page-link" href="/features">Learn More</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ </body>
+<div id="footer">
+
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+
+<script>
+    LottieInteractivity.create({
+        mode: 'cursor',
+        player: '#landing-page-animation',
+        container: "#doc",
+        actions: [
+            {
+                position: { x: [0, 1], y: [0,1] },
+                type: 'seek',
+                frames: [0, 100],
+            },
+
+        ],
+    });
+</script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyArNouw56zZhTG5zuwFAYuev3zlK02VMok",
+        authDomain: "easeattendance-c68ed.firebaseapp.com",
+        projectId: "easeattendance-c68ed",
+        storageBucket: "easeattendance-c68ed.appspot.com",
+        messagingSenderId: "200365032412",
+        appId: "1:200365032412:web:4935cf8c68760d25818519",
+        measurementId: "G-HW6X22SK2H"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+</script>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script type="text/javascript"  charset="UTF-8"  src="main.js"></script>
+<script src="nav-footer.js"></script>
+</html>

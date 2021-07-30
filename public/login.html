@@ -1,0 +1,87 @@
+<!--  Copyright (c) 2021 Ease Attendance - Varun Chitturi  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Ease Attendance | Login" />
+    <meta property="og:description" content="Login to Ease Attendance" />
+    <meta property="og:url" content="https://easeattendance.com/login" />
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/easeattendance-c68ed.appspot.com/o/Ease%20Attendance%20Login.png?alt=media&token=55ca717d-ad86-4694-b976-f34b248ada2d" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7"/>
+    <meta name="robots" content="index, follow">
+    <title>Ease Attendance | Login</title>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/ldbtn.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/loading.min.css">
+</head>
+
+<body>
+<section class="sign-in" id="signin-section">
+    <div class="container">
+        <a href="/" id="back-button"><span class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="font-size: 24px;"></span></a>
+        <div class="signin-content">
+
+            <div class="signin-image">
+                <figure><img src="Images/teacherImage2.png" ></figure>
+                <a href="signup" class="signup-image-link">Create an account</a>
+                <a href="forgotpass" class="signup-image-link">Forgot password</a>
+
+            </div>
+
+            <div class="signin-form">
+                <h2 class="form-title">Log in</h2>
+                <div class="register-form" id="login-form">
+                    <div class="form-group">
+                        <label for="login-email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="your_name" id="login-email" placeholder="Your Zoom email"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-pass"><i class="zmdi zmdi-lock"></i></label>
+                        <input type="password" name="your_pass" id="login-pass" placeholder="Password"/>
+                    </div>
+                    <h5 id="loginMessage"></h5>
+                    <div class="form-group">
+                        <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                        <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                    </div>
+
+                    <div class="form-group form-button">
+                        <div id="signin-cover" class="ld ld-over-full">
+                            <button type="button" onclick="login()" name="signin" id="signin" class="form-submit" value="Log in">Log In</button>
+                            <div class="ld ld-ring ld-spin"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+<!-- Initialize Firebase -->
+
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyArNouw56zZhTG5zuwFAYuev3zlK02VMok",
+        authDomain: "easeattendance-c68ed.firebaseapp.com",
+        projectId: "easeattendance-c68ed",
+        storageBucket: "easeattendance-c68ed.appspot.com",
+        messagingSenderId: "200365032412",
+        appId: "1:200365032412:web:4935cf8c68760d25818519",
+        measurementId: "G-HW6X22SK2H"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="auth.js"></script>
+</html>
