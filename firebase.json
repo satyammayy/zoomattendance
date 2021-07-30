@@ -1,0 +1,24 @@
+{
+  "hosting": {
+    "public": "public",
+    "cleanUrls": true,
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "app"
+      }
+    ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 3000
+    },
+    "ui": {
+      "enabled": true
+    }
+  },
+  "functions": {
+    "runtime": "nodejs14",
+    "source": "functions"
+  }
+}
